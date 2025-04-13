@@ -88,8 +88,10 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+
+// Teilaufgabe 1 Satartet hier
     @Test
-    @DisplayName("should display result after adding two positive multi-digit numbers")
+    @DisplayName("sollte das erforderliche ergebnis von 0 anzeigen")
     void testMinusrechnung() {
         Calculator calc = new Calculator();
 
@@ -105,6 +107,46 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+// Teilaufgabe 2 Startet hier
+
+    @Test
+    @DisplayName("test phase geteilt rechnen")
+    void testphase() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(7);
+        calc.pressBinaryOperationKey("/");
+        calc.pressDigitKey(7);
+        calc.pressBinaryOperationKey("/");
+        calc.pressDigitKey(7);
+        calc.pressEqualsKey();
+
+        String expected = "0,14285714";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Test Phase")
+    void testPhase2() {
+        Calculator calc = new Calculator();
+
+        calc.pressBinaryOperationKey("-");
+        calc.pressDigitKey(2);
+        calc.pressDigitKey(0);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(2);
+        calc.pressDigitKey(0);
+        calc.pressEqualsKey();
+
+        String expected = "0";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+    }
+
 
 
     //TODO hier weitere Tests erstellen
