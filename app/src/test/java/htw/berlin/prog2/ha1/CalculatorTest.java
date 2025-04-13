@@ -147,6 +147,8 @@ class CalculatorTest {
 
     }
 
+// Teilaufgabe 3
+
 
 
     //TODO hier weitere Tests erstellen
